@@ -1,0 +1,16 @@
+package dev.java10x.ninja;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping
+public class ControllerNinja {
+
+    @GetMapping("/boasVindas")
+    public String boavindas() {
+        return "Olá jovem";
+    }
+}
