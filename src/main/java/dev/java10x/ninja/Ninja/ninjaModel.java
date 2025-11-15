@@ -1,5 +1,6 @@
-package dev.java10x.ninja;
+package dev.java10x.ninja.Ninja;
 
+import dev.java10x.ninja.missoes.missoesModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +12,9 @@ public class ninjaModel {
     private String nome;
     private String Email;
     private int idade;
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+    private missoesModel missoesModel;
 
     public ninjaModel() {
     }
