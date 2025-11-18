@@ -14,14 +14,17 @@ import lombok.NoArgsConstructor;
 public class ninjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name = "ID")
     private Long id;
-
+    @Column(name = "Nome")
     private String nome;
     @Column(unique = true)
     private String Email;
-
+    @Column(name = "Idade")
     private int idade;
+
+    @Column(name = "ImgUrl")
+    private String ImgUrl;
 
     @ManyToOne
     @JoinColumn(name = "missoes_id")

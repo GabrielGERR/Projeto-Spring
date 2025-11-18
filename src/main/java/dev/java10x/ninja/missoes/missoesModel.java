@@ -9,21 +9,22 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "TB_missoes")
+@Table(name = "TD_missoes")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class missoesModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private long id;
     private String nome;
-    private String Difuculdade;
 
+    private String dificuldade;
 
-    @OneToMany(mappedBy = "missoes")
-    private List<ninjaModel> ninjaModel;
-
-
+    @OneToMany(mappedBy = "missoesModel")
+    private List<ninjaModel> ninjas;
 }
+
+
