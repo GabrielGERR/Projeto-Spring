@@ -3,7 +3,7 @@ package dev.java10x.ninja.Ninja;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninja")
 public class ControllerNinja {
 
     @GetMapping("/boasVindas")
@@ -28,7 +28,7 @@ public class ControllerNinja {
     };
 
     //alterar dados do ninja
-    @PostMapping("/alterarID")
+    @PutMapping("/alterarID")
     public String update(){
         return "alterar ninja por id";
     }
