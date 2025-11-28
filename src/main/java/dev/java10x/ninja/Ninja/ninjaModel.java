@@ -1,5 +1,6 @@
 package dev.java10x.ninja.Ninja;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.ninja.missoes.missoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
