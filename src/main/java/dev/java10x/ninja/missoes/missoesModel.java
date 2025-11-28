@@ -1,5 +1,6 @@
 package dev.java10x.ninja.missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.ninja.Ninja.ninjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,7 @@ public class missoesModel {
     private String dificuldade;
 
     @OneToMany(mappedBy = "missoesModel")
+    @JsonIgnore
     private List<ninjaModel> ninjas;
 }
 
