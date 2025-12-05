@@ -19,18 +19,18 @@ public class ControllerNinja {
     }
     //Adicionar ninja
     @PostMapping("/criar")
-    public String criarNinja() {
-        return "ninja criardo";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninjaModel) {
+        return ninjaService.criarNinja(ninjaModel);
     };
     //mostrar todos ninjas
     @GetMapping("/todos")
-    public List<ninjaModel> mostrarTodosNinjas() {
+    public List<NinjaModel> mostrarTodosNinjas() {
         return ninjaService.listarNinjas();
     };
 
     //procurar por id
     @GetMapping("/todos/{id}")
-    public ninjaModel mostrarTodosNinjasPorId(@PathVariable Long id) {
+    public NinjaModel mostrarTodosNinjasPorId(@PathVariable Long id) {
         return ninjaService.ListaNinjaPorID(id);
     };
 

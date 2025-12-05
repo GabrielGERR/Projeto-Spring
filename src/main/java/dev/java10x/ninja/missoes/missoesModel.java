@@ -1,7 +1,7 @@
 package dev.java10x.ninja.missoes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.java10x.ninja.Ninja.ninjaModel;
+import dev.java10x.ninja.Ninja.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,7 +26,7 @@ public class missoesModel {
 
     @OneToMany(mappedBy = "missoesModel")
     @JsonIgnore
-    private List<ninjaModel> ninjas;
+    private List<NinjaModel> ninjas;
 }
 
 

@@ -1,6 +1,5 @@
 package dev.java10x.ninja.Ninja;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.ninja.missoes.missoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ninjaModel {
+public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
