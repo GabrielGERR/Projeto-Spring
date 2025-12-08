@@ -2,9 +2,16 @@ package dev.java10x.ninja.missoes;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("missoes")
 public class MissoesController {
+    private MissoesService missoesService;
+
+    public MissoesController(MissoesService missoesService) {
+        this.missoesService = missoesService;
+    }
 
     @GetMapping("/boasvindas")
     public String boasVindas(){
@@ -12,22 +19,16 @@ public class MissoesController {
     }
 
     @PostMapping("/criar")
-    public String criarMissao(){
-        return "missão criada";
-    }
+    public missoesModel criarMissao(@RequestBody missoesModel missoes){return missoesService.criarNinja(missoes);}
 
     @GetMapping("/todos")
-    public String mostrarMissao(){
-        return "mostrar missões";
+    public List<missoesModel> mostrarMissao(){return missoesService.ListarNinja();}
+
+    @PutMapping("/alterar/{id}")
+    public missoesModel alterarMissao(@PathVariable Long id, @RequestBody missoesModel misssoes){
+        return missoesService.updateMissoes(id, misssoes);
     }
 
-    @PutMapping("/alterar")
-    public String alterarMissao(){
-        return "missão alterada";
-    }
-
-    @DeleteMapping("/deletar")
-    public String deletarMissao(){
-        return "missão deletada";
-    }
+    @DeleteMapping("/deletarID/{id}")
+    public void deletarMissao(@PathVariable Long id){missoesService.deletarNinja(id);}
 }
