@@ -9,8 +9,11 @@ import java.util.List;
 public class ControllerNinja {
 
     private NinjaService ninjaService;
-    public ControllerNinja(NinjaService ninjaService) {
+    private NinjaDTO ninjaDTO;
+
+    public ControllerNinja(NinjaService ninjaService, NinjaDTO ninjaDTO) {
         this.ninjaService = ninjaService;
+        this.ninjaDTO = ninjaDTO;
     }
 
     @GetMapping("/boasVindas")
@@ -19,8 +22,8 @@ public class ControllerNinja {
     }
     //Adicionar ninja
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninjaModel) {
-        return ninjaService.criarNinja(ninjaModel);
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninjaDTO) {
+        return ninjaService.criarNinja(ninjaDTO);
     };
     //mostrar todos ninjas
     @GetMapping("/todos")
