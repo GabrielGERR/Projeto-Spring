@@ -22,9 +22,10 @@ public class NinjaModel {
     private String Email;
     @Column(name = "Idade")
     private int idade;
-
     @Column(name = "ImgUrl")
     private String ImgUrl;
+    @Column(name = "rank")
+    private String rank;
 
     @ManyToOne
     @JoinColumn(name = "missoes_id")
